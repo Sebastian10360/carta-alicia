@@ -1,0 +1,95 @@
+:root {
+  --vino: #6b0a0a;
+  --papel: #fffcfa;
+  --fondo: #f4eceb;
+  --texto: #2b2523;
+  --suave: #7d6e6b;
+  --linea: #ece1de;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font: 400 1.06rem/1.4 'Mulish', 'Segoe UI', system-ui, sans-serif;
+  padding: 16px max(16px, env(safe-area-inset-right)) 32px max(16px, env(safe-area-inset-left));
+}
+
+h1, h2, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+button { font: inherit; }
+:focus-visible { outline: 3px solid var(--vino); outline-offset: 2px; }
+
+.card {
+  max-width: 32rem;
+  margin: 0 auto;
+  background: var(--papel);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 6px 28px rgba(80, 20, 20, .12);
+}
+
+/* Cabecera */
+.cab {
+  background: var(--vino);
+  color: #fff;
+  padding: 34px 24px 30px;
+}
+.cab h1 { font-size: 1.85rem; font-weight: 600; line-height: 1.15; overflow-wrap: anywhere; }
+.cab p { font-size: 1.4rem; font-style: italic; margin-top: 4px; }
+
+/* Pestañas */
+.tabs { display: flex; gap: 8px; padding: 22px 24px 0; }
+.tab {
+  flex: 1;
+  min-height: 46px;
+  padding: 8px 12px;
+  border: 1.5px solid var(--vino);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--vino);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.tab.activa { background: var(--vino); color: #fff; }
+
+/* Contenido */
+.vista { padding: 8px 24px 32px; }
+.aviso { padding: 28px 0; color: var(--suave); }
+
+.sec { padding-top: 26px; }
+.sec h2 { color: var(--vino); font-size: 1.55rem; font-weight: 600; line-height: 1.2; }
+.sec h2::after { content: ""; display: block; width: 80px; height: 3px; background: var(--vino); margin-top: 8px; }
+
+.sec li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 15px 0 0;
+}
+.plato { min-width: 0; overflow-wrap: anywhere; }
+.desc { display: block; color: var(--suave); font-size: .92rem; margin-top: 2px; }
+.precio { color: var(--vino); font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.agotado .plato-nombre { text-decoration: line-through; opacity: .55; }
+.agotado .precio { font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; }
+
+/* Para llevar */
+.llevar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  padding: 12px 22px;
+  background: var(--vino);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 1.05rem;
+}
+.llevar svg { width: 22px; height: 22px; flex: none; }
+
+.pie { margin-top: 30px; color: var(--suave); font-size: .85rem; }
